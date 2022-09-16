@@ -25,18 +25,22 @@
                   
               </div>
           </div>
+          <div class="card mt-4 col-md-8">
+            <ul class="list-group">
+                <li
+                *ngFor="let employee of employeeArray"
+                class="list-group-item list-group-item-action"
+                (click) = "openForEdit(employee)"
+                [class.active]="employee == selectedEmployee">
+                <span class="btn btn-primary">{{employee.id}}</span> 
+                {{employee.nombre}} 
+                {{employee.apellido}} - 
+                {{employee.direccion}}
+            </li>
+  
+              </ul>
+        
+  
+    </div>
       
-      <div class="card mt-4 col-md-8">
-          <ul class="list-group">
-              <li
-              *ngFor="let employee of employeeArray"
-              class="list-group-item list-group-item-action"
-              (click) = "openForEdit(employee)"
-              [class.active]="employee == selectedEmployee">
-              <span class="btn btn-primary">{{employee.id}}</span> {{employee.nombre}} {{employee.apellido}} - {{employee.direccion}}
-          </li>
-
-            </ul>
       
-
-  </div>
